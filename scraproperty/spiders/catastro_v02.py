@@ -15,6 +15,10 @@ class QuotesSpider(scrapy.Spider):
         self.driver.close()
 
     def start_requests(self):
+	config = SafeConfigParser()
+        config.read('properties/conf.cfg')
+        url = config.get('site_info', 'url')
+
         urls = [
             url,
         ]

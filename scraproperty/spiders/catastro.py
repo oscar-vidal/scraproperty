@@ -27,8 +27,6 @@ class QuotesSpider(scrapy.Spider):
         VIEWSTATE = response.xpath("//*[@id='__VIEWSTATE']/@value").extract()
         VIEWSTATEGENERATOR = response.xpath("//*[@id='__VIEWSTATEGENERATOR']/@value").extract()
 
-        #element_array = driver.findElement(By.xpath("//select[@id='00N20000002gQI3']/option"))
-
         #element_array = response.xpath("//select[@id='lcProvincias']/option")
 
         options = response.xpath("//*[@id='lcProvincias']/option[1]/text()")
@@ -38,7 +36,7 @@ class QuotesSpider(scrapy.Spider):
 
         print option_text
 
-        #print EVENTVALIDATION
-        #print VIEWSTATE
-        #print VIEWSTATEGENERATOR
+        print EVENTVALIDATION
+        print VIEWSTATE
+        print VIEWSTATEGENERATOR
         
