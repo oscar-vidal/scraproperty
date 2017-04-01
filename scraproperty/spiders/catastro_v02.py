@@ -7,8 +7,8 @@ class QuotesSpider(scrapy.Spider):
     name = "catastro2"
 
     def __init__(self):
-        #self.driver = webdriver.Chrome('/Users/oscar/code/scrape_catastro/drivers/chromedriver') 
-        #self.driver = webdriver.Firefox('/Users/oscar/code/scrape_catastro/drivers/geckodriver') 
+        #self.driver = webdriver.Chrome('drivers/chromedriver') 
+        #self.driver = webdriver.Firefox('drivers/geckodriver') 
         self.driver = webdriver.Firefox() 
 
     def __del__(self):
@@ -16,7 +16,7 @@ class QuotesSpider(scrapy.Spider):
 
     def start_requests(self):
         urls = [
-            'https://www1.sedecatastro.gob.es/CYCBienInmueble/OVCBusqueda.aspx',
+            url,
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
